@@ -1,16 +1,37 @@
+body{
+    text-align: center;
+}
+
 .slide-rule{
     position: relative;
 }
 
-#rule-in{
-    margin-left: 10px;
-    z-index: 70;
+#rule-out-top{
+    background-image: url('img/ruler_out_top.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 7em;
+    width: auto;
 }
 
-.rule-img{
-    position: absolute;
-    max-width: 100%;
-    top: 0px;
-    height: auto;
-    z-index: 9;
+#rule-in{
+    position:absolute;
+    background-image: url('img/ruler_in.png');
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 7em;
+    width: auto;
+}
+
+#rule-out-bottom{
+    background-image: url('img/ruler_out_bottom.png');
+    background-repeat: no-repeat;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 7em;
+    width: auto;
 }

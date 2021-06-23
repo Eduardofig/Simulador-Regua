@@ -1,16 +1,14 @@
 let movingRule = document.getElementById("rule-in")
-let images = document.getElementsByClassName("rule-img")
+let slideRule = document.getElementsByClassName("slide-rule-parts")
+let bottomPart = document.getElementById("rule-out-bottom")
 
 let pos0 = 0, pos1 = 0
-let initialMargin = movingRule.style.marginLeft
+let initialPos = movingRule.style.left
 let initialOffsetLeft = movingRule.offsetLeft
-let initialWidth = images[0].offsetWidth
+let initialWidth = movingRule.offsetWidth
 
-for (let i = 0; i < images.length; i++){
-    images[i].ondragstart = function(event){
-        event.preventDefault()
-    }
-}
+movingRule.style.width = slideRule[0].offsetWidth
+bottomPart.style.marginTop = movingRule.offsetHeight
 
 let mouseClicking = false
 
@@ -25,22 +23,22 @@ movingRule.onmousedown = function(e){
 
 document.onmouseup = function(){
     if (mouseClicking){
+        movingRule.style.cursor = "grab"
         mouseClicking = false
     }
 }
 
 document.onmousemove = function(event){
     if (mouseClicking){
+        movingRule.style.cursor = "grabbing"
         pos1 = pos0 - event.clientX
         pos0 = event.clientX
-        //movingRule.style.marginLeft = Math.max(Math.min((movingRule.offsetLeft - pos1), 1000), -1000) + "px"
-        movingRule.style.marginLeft = (movingRule.offsetLeft - pos1) - initialOffsetLeft + "px"
-        
+        movingRule.style.left = (movingRule.offsetLeft - pos1) - initialOffsetLeft + "px"
     }
 }
 
 document.onkeydown = function(event){
     if(event.key == 'r'){
-        movingRule.style.marginLeft = initialMargin
+        movingRule.style.left = initialPos
     }
 }
