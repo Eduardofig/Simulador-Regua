@@ -1,13 +1,12 @@
 let movingRule = document.getElementById("rule-in")
-let slideRule = document.getElementsByClassName("slide-rule-parts")
 let bottomPart = document.getElementById("rule-out-bottom")
+let numberInput = document.getElementById("number-input")
 
 let pos0 = 0, pos1 = 0
 let initialPos = movingRule.style.left
 let initialOffsetLeft = movingRule.offsetLeft
-let initialWidth = movingRule.offsetWidth
 
-movingRule.style.width = slideRule[0].offsetWidth
+movingRule.style.width = bottomPart.offsetWidth
 bottomPart.style.marginTop = movingRule.offsetHeight
 
 let mouseClicking = false
@@ -40,5 +39,13 @@ document.onmousemove = function(event){
 document.onkeydown = function(event){
     if(event.key == 'r'){
         movingRule.style.left = initialPos
+    }
+}
+
+numberInput.oninput = function(e){
+    let character = e.data
+    let currentValue = numberInput.value
+    if (isNaN(character)){
+        numberInput.value = currentValue.slice(0, currentValue.length - 1)
     }
 }
