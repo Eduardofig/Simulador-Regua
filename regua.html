@@ -1,0 +1,211 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regua de Cálculo</title>
+    <style>
+        body, html{
+            margin: 0;
+            text-align: center;
+        }
+
+        .slide-rule{
+            position: relative;
+        }
+
+        #rule-out-top{
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/31/Slide_rule_example1.svg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            height: 7em;
+            width: auto;
+        }
+
+        #rule-in{
+            position:absolute;
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/31/Slide_rule_example1.svg');
+            background-repeat: no-repeat;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            height: 7em;
+            width: auto;
+        }
+
+        #rule-out-bottom{
+            background-image: url('https://upload.wikimedia.org/wikipedia/commons/3/31/Slide_rule_example1.svg');
+            background-repeat: no-repeat;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            height: 7em;
+            width: auto;
+        }
+
+    </style>
+    
+
+</head>
+<body>
+    <h3>Pressione [R] para resetar a simulação</h3>
+
+
+
+    <input id="number-input" type="text">
+
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+
+    <div class="slide-rule">
+        <svg id="slide-rule-svg"
+        xmlns:dc="http://purl.org/dc/elements/1.1/"
+        xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+        xmlns:svg="http://www.w3.org/2000/svg"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 -2 336 48"
+        font-family="Bitstream Vera Sans, sans-serif"
+        font-size="12px"
+        version="1.0"
+        >
+            <defs>
+                <g id="scale">
+                <rect
+                    style="fill:#f0e0d0;stroke:#000000;stroke-width:1"
+                    width="328"
+                    height="22"
+                    x="-9"
+                    y="0" />
+                <path
+                    d="m 0,0 0,12 m 6.5622771,-12 0,6 m 6.2569419,-6 0,9 m 5.978762,-9 0,6 m 5.724268,-6 0,9 m 5.490559,-9 0,6 m 5.275186,-6 0,9 m 5.076074,-9 0,6 m 4.891448,-6 0,9 m 4.719782,-9 0,6 m 4.559759,-6 0,12 m 4.410231,-12 0,6 m 4.2702,-6 0,9 m 4.138788,-9 0,6 m 4.015224,-6 0,9 m 3.898823,-9 0,6 m 3.788983,-6 0,9 m 3.685162,-9 0,6 m 3.58688,-6 0,9 m 3.493703,-9 0,6 m 3.405245,-6 0,12 m 3.321156,-12 0,6 m 3.241121,-6 0,9 m 3.164847,-9 0,6 m 3.09209,-6 0,9 m 3.0226,-9 0,6 m 2.95617,-6 0,9 m 2.89258,-9 0,6 m 2.83169,-6 0,9 m 2.77329,-9 0,6 m 2.71726,-6 0,12 m 2.66346,-12 0,6 m 2.61173,-6 0,9 m 2.56198,-9 0,6 m 2.51409,-6 0,9 m 2.46796,-9 0,6 m 2.42349,-6 0,9 m 2.38059,-9 0,6 m 2.33919,-6 0,9 m 2.29921,-9 0,6 m 2.26055,-6 0,12 m 4.41023,-12 0,6 m 4.2702,-6 0,6 m 4.13879,-6 0,6 m 4.01523,-6 0,6 m 3.89882,-6 0,9 m 3.78898,-9 0,6 m 3.68516,-6 0,6 m 3.58688,-6 0,6 m 3.49371,-6 0,6 m 3.40524,-6 0,12 m 3.32116,-12 0,6 m 3.24112,-6 0,6 m 3.16485,-6 0,6 m 3.09209,-6 0,6 m 3.0226,-6 0,9 m 2.95616,-9 0,6 m 2.89259,-6 0,6 m 2.83168,-6 0,6 m 2.7733,-6 0,6 m 2.71726,-6 0,12 m 2.66345,-12 0,6 m 2.61174,-6 0,6 m 2.56198,-6 0,6 m 2.51409,-6 0,6 m 2.46796,-6 0,9 m 2.42349,-9 0,6 m 2.38059,-6 0,6 m 2.33919,-6 0,6 m 2.2992,-6 0,6 m 2.26056,-6 0,12 m 4.41023,-12 0,6 m 4.2702,-6 0,6 m 4.13879,-6 0,6 m 4.01522,-6 0,6 m 3.89883,-6 0,12 m 3.78898,-12 0,6 m 3.68516,-6 0,6 m 3.58688,-6 0,6 m 3.4937,-6 0,6 m 3.40525,-6 0,12 m 3.32115,-12 0,6 m 3.24112,-6 0,6 m 3.16486,-6 0,6 m 3.09209,-6 0,6 m 3.0226,-6 0,12 m 2.95616,-12 0,6 m 2.89258,-6 0,6 m 2.83169,-6 0,6 m 2.77329,-6 0,6 m 2.71727,-6 0,12"
+                    style="stroke:#000000;stroke-width:1" />
+                </g>
+                <g id="numbers" font-size="8px">
+                <text x="1.5" y="0">1</text>
+                <text x="94.728302" y="0">2</text>
+                <text x="149.263" y="0">3</text>
+                <text x="187.957" y="0">4</text>
+                <text x="217.96899" y="0">5</text>
+                <text x="242.492" y="0">6</text>
+                <text x="263.22501" y="0">7</text>
+                <text x="281.185" y="0">8</text>
+                <text x="297.02701" y="0">9</text>
+                <text x="311.198" y="0">1</text>
+                </g>
+                <g id="slidedown">
+                <use xlink:href="#scale" x="0" y="0" />
+                <use xlink:href="#numbers" x="0" y="16" />
+                </g>
+                <g id="slideup">
+                <use xlink:href="#scale" x="0" y="0" transform="scale(1,-1)" />
+                <use xlink:href="#numbers" x="0" y="-9" />
+                </g>
+            </defs>
+        
+            <g transform="translate(13,0)">
+                <title>Shift slide rule over</title>
+            
+                <g id='rule-top' transform="translate(0,0)">
+                <title>top slide indexed by 2</title>
+                <use xlink:href="#slideup" x="0" y="22" />
+                </g>
+            
+                <g>
+                <title>bottom slide</title>
+                <use xlink:href="#slidedown" x="0" y="22" />
+                </g>
+            </g>
+        </svg>
+
+    </div>
+
+    <script>
+        // pegando os elementos que serão usados
+        let movingRule = document.getElementById("rule-top")
+        let numberInput = document.getElementById("number-input")
+        const svgel = document.getElementById("slide-rule-svg")
+        let asd = document.getElementById("scale")
+        var offset = 0
+        var fullSize = 311.198
+
+        // iniciando as posicões iniciais para ser feito o reset depois
+        let pos0 = 0, pos1 = 0
+
+        let mouseClicking = false
+
+        movingRule.onmouseover = function(){
+            movingRule.style.cursor = "grab"
+        }
+
+
+
+        movingRule.onmousedown = function(e){
+            var CTM = svgel.getScreenCTM();
+            // posição inicial quando clicar
+            offset = (e.clientX - CTM.e) / CTM.a
+            let transl = translateFilter(movingRule.getAttribute("transform"))
+            offset -= parseFloat(transl)
+            mouseClicking = true
+        }
+
+        document.onmouseup = function(){
+            // reseta o estado e o cursor
+            if (mouseClicking){
+                movingRule.style.cursor = "grab"
+                mouseClicking = false
+            }
+        }
+
+        document.onmousemove = function(event){
+            if (mouseClicking){
+                let CTM = svgel.getScreenCTM()
+                movingRule.style.cursor = "grabbing"
+                // calcula o deslocamento desde a posição inicial
+                pos1 = pos0 - parseInt(event.clientX)
+                pos0 = event.clientX
+                newpos = ((pos0 - CTM.e) / CTM.a) - offset
+                // posiciona o elemento de acordo com a nova posição
+                movingRule.setAttribute("transform", "translate(" + newpos +  ", 0)")
+            }
+        }
+
+        // reseta a régua para a posição inicial
+        document.onkeydown = function(event){
+            if(event.key == 'r'){
+                movingRule.setAttribute("transform", "translate(0,0)")
+            }
+        }
+
+        // filtra os caractéres na textbox para permitir apenas números
+        numberInput.oninput = function(e){
+            // let character = e.data
+            // let currentValue = numberInput.value
+            // if (isNaN(character)){
+            //     numberInput.value = currentValue.slice(0, currentValue.length - 1)
+            // }
+            if (numberInput.value.length > 0){
+                let rawNumber = parseFloat(numberInput.value)
+                let num = (Math.log10(rawNumber) * (fullSize  - 1.5 ))
+                movingRule.setAttribute("transform", "translate(" + num +  ", 0)")
+            }
+        }
+
+        function translateFilter(str){
+            let comma;
+            for (let i = 9; i < str.length; ++i) {
+                if(str[i] == ',') {
+                    comma = i - 10;
+                    break;
+                }
+            }
+            let num = str.substr(10, comma);
+            return num
+        }
+    </script>
+</body>
+</html>
